@@ -1,5 +1,18 @@
-﻿import { ArrowRight, Code, Database, Globe, LineChart, Lock, Headphones } from 'lucide-react';
+import type { Metadata } from 'next';
+import { ArrowRight, Code, Database, Globe, LineChart, Lock, Headphones } from 'lucide-react';
 import Link from 'next/link';
+
+export const metadata: Metadata = {
+  title: 'Services',
+  description:
+    'Explore Prism's modular services — web platform, data management, analytics, security, developer API, and managed support. Pick what fits your stage.',
+  alternates: { canonical: '/services' },
+  openGraph: {
+    title: 'Services | Prism',
+    description: 'Modular services for every stage — web platform, analytics, security, API, and more.',
+    url: '/services',
+  },
+};
 
 const services = [
   {
@@ -28,7 +41,7 @@ const services = [
   },
   {
     icon: Code, title: 'Developer API', price: 'From $59/mo',
-    desc: 'Programmatic access to all Nexus features via a clean, well-documented REST API.',
+    desc: 'Programmatic access to all Prism features via a clean, well-documented REST API.',
     features: ['REST & GraphQL', 'SDK libraries', 'Webhooks', 'Sandbox mode'],
     color: 'text-orange-600 bg-orange-50 border-orange-100',
   },
@@ -54,7 +67,7 @@ export default function Services() {
       <section className="py-20 px-4 bg-gray-50">
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map(s => (
-            <div key={s.title} className={`bg-white rounded-2xl p-7 border shadow-sm hover:shadow-md transition-all`}>
+            <div key={s.title} className="bg-white rounded-2xl p-7 border shadow-sm hover:shadow-md transition-all">
               <div className={`w-12 h-12 rounded-xl flex items-center justify-center mb-5 ${s.color}`}>
                 <s.icon size={22} />
               </div>
@@ -90,4 +103,3 @@ export default function Services() {
     </div>
   );
 }
-

@@ -26,7 +26,7 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-16">
           <Link href="/" className="flex items-center gap-2 font-bold text-indigo-600 text-lg">
             <Zap size={20} className="fill-indigo-600" />
-            Nexus
+            Prism
           </Link>
 
           <div className="hidden md:flex items-center gap-6">

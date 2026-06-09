@@ -1,5 +1,19 @@
-﻿import Link from 'next/link';
+import type { Metadata } from 'next';
+import Link from 'next/link';
 import { ArrowRight, Zap, Shield, BarChart2, Users, Plug, Smartphone, Star, CheckCircle } from 'lucide-react';
+
+export const metadata: Metadata = {
+  title: 'Prism — Modern SaaS Platform',
+  description:
+    'Prism is the all-in-one platform for modern teams. Manage users, content, and analytics from one beautiful dashboard. Start free, no credit card required.',
+  alternates: { canonical: '/' },
+  openGraph: {
+    title: 'Prism — Modern SaaS Platform',
+    description:
+      'Prism is the all-in-one platform for modern teams. Manage users, content, and analytics from one beautiful dashboard.',
+    url: '/',
+  },
+};
 
 const features = [
   { icon: Zap, title: 'Lightning Fast', desc: 'Optimized with edge caching and CDN delivery globally. Pages load in under 100ms.', color: 'text-yellow-500 bg-yellow-50' },
@@ -11,7 +25,7 @@ const features = [
 ];
 
 const testimonials = [
-  { name: 'Sarah Johnson', role: 'CEO, TechCorp', text: 'Nexus transformed how our team works. Productivity is up 40% in just 2 months.', avatar: 'SJ', stars: 5 },
+  { name: 'Sarah Johnson', role: 'CEO, TechCorp', text: 'Prism transformed how our team works. Productivity is up 40% in just 2 months.', avatar: 'SJ', stars: 5 },
   { name: 'Ahmed Hassan', role: 'CTO, StartupX', text: "The best SaaS platform we've ever used. The dashboard is incredibly intuitive.", avatar: 'AH', stars: 5 },
   { name: 'Maria Garcia', role: 'Product Manager', text: 'Setup took 10 minutes. Our entire team was onboarded within the same day.', avatar: 'MG', stars: 5 },
 ];
@@ -25,7 +39,7 @@ export default function Home() {
         <div className="relative max-w-5xl mx-auto px-4 py-28 text-center">
           <div className="inline-flex items-center gap-2 bg-indigo-500/10 border border-indigo-500/20 px-4 py-1.5 rounded-full text-sm text-indigo-300 mb-8">
             <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
-            Now live â€” Version 2.0 with AI features
+            Now live — Version 2.0 with AI features
           </div>
           <h1 className="text-5xl md:text-7xl font-extrabold mb-6 leading-[1.1] tracking-tight">
             Build faster.<br />
@@ -115,7 +129,7 @@ export default function Home() {
       <section className="py-24 px-4 bg-linear-to-br from-indigo-600 to-purple-700 text-white text-center">
         <div className="max-w-2xl mx-auto">
           <h2 className="text-4xl font-bold mb-4">Ready to get started?</h2>
-          <p className="text-indigo-200 mb-10 text-lg">Join 10,000+ teams already using Nexus to build their business.</p>
+          <p className="text-indigo-200 mb-10 text-lg">Join 10,000+ teams already using Prism to build their business.</p>
           <div className="flex flex-wrap gap-4 justify-center">
             <Link href="/dashboard" className="bg-white text-indigo-700 font-semibold px-8 py-3.5 rounded-xl hover:bg-indigo-50 transition-all inline-flex items-center gap-2">
               Open Dashboard <ArrowRight size={18} />
@@ -129,4 +143,3 @@ export default function Home() {
     </div>
   );
 }
-

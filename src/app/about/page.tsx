@@ -1,10 +1,24 @@
-﻿import { Heart, Zap, Eye, Users } from 'lucide-react';
+import type { Metadata } from 'next';
+import { Heart, Zap, Eye, Users } from 'lucide-react';
 import Link from 'next/link';
 
+export const metadata: Metadata = {
+  title: 'About Us',
+  description:
+    'Learn about Prism — the all-in-one SaaS platform built to replace 10 tools with one beautiful dashboard. Our story, values, and the team behind the product.',
+  alternates: { canonical: '/about' },
+  openGraph: {
+    title: 'About Us | Prism',
+    description:
+      'Learn about Prism — the all-in-one SaaS platform built to replace 10 tools with one beautiful dashboard.',
+    url: '/about',
+  },
+};
+
 const values = [
-  { icon: Eye, title: 'Transparency', desc: 'Open roadmap, honest pricing, no hidden fees â€” ever.', color: 'text-blue-600 bg-blue-50' },
+  { icon: Eye, title: 'Transparency', desc: 'Open roadmap, honest pricing, no hidden fees — ever.', color: 'text-blue-600 bg-blue-50' },
   { icon: Heart, title: 'Customer First', desc: 'Every feature starts with a real customer problem.', color: 'text-red-500 bg-red-50' },
-  { icon: Zap, title: 'Move Fast', desc: 'We ship, learn, and improve â€” every single week.', color: 'text-yellow-500 bg-yellow-50' },
+  { icon: Zap, title: 'Move Fast', desc: 'We ship, learn, and improve — every single week.', color: 'text-yellow-500 bg-yellow-50' },
   { icon: Users, title: 'Teamwork', desc: 'Built by a global remote team that practices what it preaches.', color: 'text-purple-600 bg-purple-50' },
 ];
 
@@ -22,16 +36,16 @@ export default function About() {
         <div className="max-w-3xl mx-auto">
           <p className="text-indigo-400 text-sm font-semibold uppercase tracking-widest mb-4">About Us</p>
           <h1 className="text-5xl font-extrabold mb-5">We're building the future of team productivity</h1>
-          <p className="text-slate-300 text-lg max-w-2xl mx-auto">Founded in 2021, Nexus is on a mission to replace 10 tools with one beautiful platform.</p>
+          <p className="text-slate-300 text-lg max-w-2xl mx-auto">Founded in 2021, Prism is on a mission to replace 10 tools with one beautiful platform.</p>
         </div>
       </section>
 
       <section className="py-20 px-4 max-w-4xl mx-auto">
         <h2 className="text-3xl font-bold text-gray-900 mb-6">Our Story</h2>
         <div className="prose prose-lg text-gray-600 space-y-4">
-          <p>Nexus was born out of frustration. Our founders were running a fast-growing startup and found themselves juggling 12 different SaaS tools â€” one for analytics, one for CMS, one for user management. The context-switching was killing productivity.</p>
-          <p>So they built Nexus: a single, unified platform that brings together everything a modern team needs. No more switching tabs, no more duplicate data, no more integration headaches.</p>
-          <p>Today, over 10,000 teams rely on Nexus to run their operations. We're a remote-first company of 60+ people spread across 25 countries, all united by a belief that great software should make life simpler, not harder.</p>
+          <p>Prism was born out of frustration. Our founders were running a fast-growing startup and found themselves juggling 12 different SaaS tools — one for analytics, one for CMS, one for user management. The context-switching was killing productivity.</p>
+          <p>So they built Prism: a single, unified platform that brings together everything a modern team needs. No more switching tabs, no more duplicate data, no more integration headaches.</p>
+          <p>Today, over 10,000 teams rely on Prism to run their operations. We're a remote-first company of 60+ people spread across 25 countries, all united by a belief that great software should make life simpler, not harder.</p>
         </div>
       </section>
 
@@ -81,4 +95,3 @@ export default function About() {
     </div>
   );
 }
-

@@ -1,5 +1,18 @@
-﻿import { CheckCircle, Zap } from 'lucide-react';
+import type { Metadata } from 'next';
+import { CheckCircle, Zap } from 'lucide-react';
 import Link from 'next/link';
+
+export const metadata: Metadata = {
+  title: 'Pricing',
+  description:
+    'Simple, transparent pricing for every team size. Start free, upgrade as you grow. No hidden fees, no surprises — just great software.',
+  alternates: { canonical: '/pricing' },
+  openGraph: {
+    title: 'Pricing | Prism',
+    description: 'Simple, transparent pricing for every team size. Start free, upgrade as you grow.',
+    url: '/pricing',
+  },
+};
 
 const plans = [
   {
@@ -101,4 +114,3 @@ export default function Pricing() {
     </div>
   );
 }
-

@@ -1,12 +1,25 @@
-﻿import { Zap, Shield, BarChart2, Users, Plug, Smartphone, RefreshCw, Globe, Bell, Search, FileText, GitBranch } from 'lucide-react';
+import type { Metadata } from 'next';
+import { Zap, Shield, BarChart2, Users, Plug, Smartphone, RefreshCw, Globe, Bell, Search, FileText, GitBranch } from 'lucide-react';
 import Link from 'next/link';
+
+export const metadata: Metadata = {
+  title: 'Features',
+  description:
+    'Explore 50+ features across performance, security, productivity, and integrations. See everything Prism has to offer for modern teams.',
+  alternates: { canonical: '/features' },
+  openGraph: {
+    title: 'Features | Prism',
+    description: 'Explore 50+ features across performance, security, productivity, and integrations.',
+    url: '/features',
+  },
+};
 
 const categories = [
   {
     title: 'Performance',
     features: [
       { icon: Zap, name: 'Instant Load', desc: 'Sub-100ms page loads powered by edge CDN nodes in 50+ cities.' },
-      { icon: RefreshCw, name: 'Auto Scaling', desc: 'Handles traffic spikes automatically â€” no manual intervention needed.' },
+      { icon: RefreshCw, name: 'Auto Scaling', desc: 'Handles traffic spikes automatically — no manual intervention needed.' },
       { icon: Globe, name: 'Global CDN', desc: 'Your content delivered from the nearest server to your users, everywhere.' },
     ],
   },
@@ -21,7 +34,7 @@ const categories = [
   {
     title: 'Productivity',
     features: [
-      { icon: Search, name: 'Universal Search', desc: 'Find anything â€” users, posts, settings â€” instantly with Cmd+K.' },
+      { icon: Search, name: 'Universal Search', desc: 'Find anything — users, posts, settings — instantly with Cmd+K.' },
       { icon: FileText, name: 'Rich Content Editor', desc: 'Write and publish content with a beautiful Notion-like editor.' },
       { icon: Bell, name: 'Smart Notifications', desc: 'Only get alerted about what matters. Silence everything else.' },
     ],
@@ -30,7 +43,7 @@ const categories = [
     title: 'Integrations',
     features: [
       { icon: Plug, name: '200+ Integrations', desc: 'Connect with Slack, Stripe, HubSpot, Zapier, and hundreds more.' },
-      { icon: GitBranch, name: 'Webhooks', desc: 'Push real-time events to any endpoint as data changes in Nexus.' },
+      { icon: GitBranch, name: 'Webhooks', desc: 'Push real-time events to any endpoint as data changes in Prism.' },
       { icon: Smartphone, name: 'Mobile Apps', desc: 'Native iOS and Android apps so your team stays connected on the go.' },
     ],
   },
@@ -73,13 +86,12 @@ export default function Features() {
       <section className="py-16 px-4 bg-indigo-600 text-white text-center">
         <div className="max-w-xl mx-auto">
           <h2 className="text-3xl font-bold mb-4">See it in action</h2>
-          <p className="text-indigo-200 mb-7">Explore the full dashboard and all features â€” no sign up required.</p>
+          <p className="text-indigo-200 mb-7">Explore the full dashboard and all features — no sign up required.</p>
           <Link href="/dashboard" className="bg-white text-indigo-700 font-semibold px-8 py-3 rounded-xl hover:bg-indigo-50 transition-colors inline-block">
-            Open Live Demo â†’
+            Open Live Demo →
           </Link>
         </div>
       </section>
     </div>
   );
 }
-

@@ -1,7 +1,20 @@
-﻿import Link from 'next/link';
+import type { Metadata } from 'next';
+import Link from 'next/link';
 import { Calendar, User, ArrowRight, Tag } from 'lucide-react';
 import { connectDB } from '@/lib/mongodb';
 import Post from '@/models/Post';
+
+export const metadata: Metadata = {
+  title: 'Blog',
+  description:
+    'Product news, engineering deep-dives, and growth tips from the Prism team. Stay up to date with the latest updates and insights.',
+  alternates: { canonical: '/blog' },
+  openGraph: {
+    title: 'Blog | Prism',
+    description: 'Product news, engineering deep-dives, and growth tips from the Prism team.',
+    url: '/blog',
+  },
+};
 
 interface PostDoc {
   _id: string;
@@ -28,7 +41,7 @@ async function getPosts(): Promise<PostDoc[]> {
 }
 
 const placeholders = [
-  { title: 'Getting Started with Nexus in 5 Minutes', excerpt: 'A complete walkthrough of setting up your account, inviting your team, and publishing your first piece of content.', author: 'Alex Rivera', tags: ['Tutorial', 'Guide'], date: 'May 12, 2024' },
+  { title: 'Getting Started with Prism in 5 Minutes', excerpt: 'A complete walkthrough of setting up your account, inviting your team, and publishing your first piece of content.', author: 'Alex Rivera', tags: ['Tutorial', 'Guide'], date: 'May 12, 2024' },
   { title: 'How We Scaled to 10,000 Users Without Downtime', excerpt: 'An engineering deep-dive into the infrastructure decisions that let us grow 10x without a single incident.', author: 'Priya Nair', tags: ['Engineering', 'Scale'], date: 'April 28, 2024' },
   { title: 'The Future of Team Collaboration', excerpt: 'AI-powered workflows, async-first communication, and the tools that will define the next decade of remote work.', author: 'Luca Bianchi', tags: ['Product', 'AI'], date: 'April 10, 2024' },
 ];
@@ -43,7 +56,7 @@ export default async function Blog() {
         <div className="max-w-3xl mx-auto">
           <p className="text-indigo-400 text-sm font-semibold uppercase tracking-widest mb-4">Blog</p>
           <h1 className="text-5xl font-extrabold mb-5">Insights & Updates</h1>
-          <p className="text-slate-300 text-lg">Product news, engineering deep-dives, and growth tips from the Nexus team.</p>
+          <p className="text-slate-300 text-lg">Product news, engineering deep-dives, and growth tips from the Prism team.</p>
         </div>
       </section>
 
@@ -52,7 +65,7 @@ export default async function Blog() {
           {!hasReal && (
             <div className="bg-indigo-50 border border-indigo-100 rounded-xl px-5 py-3 mb-8 text-sm text-indigo-700 flex items-center gap-2">
               <span className="w-2 h-2 rounded-full bg-indigo-400 animate-pulse" />
-              Showing example posts â€” create real posts from the <Link href="/dashboard/posts" className="underline font-medium">Dashboard</Link>.
+              Showing example posts — create real posts from the <Link href="/dashboard/posts" className="underline font-medium">Dashboard</Link>.
             </div>
           )}
 
@@ -62,7 +75,7 @@ export default async function Blog() {
               : placeholders.map((p, i) => ({ ...p, id: String(i) }))
             ).map(post => (
               <article key={post.id} className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all border border-gray-100 flex flex-col">
-                <div className="h-3 bg-gradient-to-r from-indigo-500 to-purple-500" />
+                <div className="h-3 bg-linear-to-r from-indigo-500 to-purple-500" />
                 <div className="p-6 flex-1 flex flex-col">
                   <div className="flex flex-wrap gap-1.5 mb-4">
                     {post.tags.slice(0, 2).map(tag => (
@@ -90,4 +103,3 @@ export default async function Blog() {
     </div>
   );
 }
-

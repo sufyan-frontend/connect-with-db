@@ -1,8 +1,21 @@
-﻿import { ExternalLink, GitFork } from 'lucide-react';
+import type { Metadata } from 'next';
+import { ExternalLink, GitFork } from 'lucide-react';
 import Link from 'next/link';
 
+export const metadata: Metadata = {
+  title: 'Portfolio',
+  description:
+    'Real products built on top of the Prism platform — from healthcare SaaS and e-commerce analytics to developer tools and EdTech. Browse our showcase.',
+  alternates: { canonical: '/portfolio' },
+  openGraph: {
+    title: 'Portfolio | Prism',
+    description: 'Real products built on the Prism platform — healthcare, e-commerce, EdTech, and more.',
+    url: '/portfolio',
+  },
+};
+
 const projects = [
-  { title: 'HealthTrack Pro', category: 'SaaS', desc: 'Patient management platform serving 200+ clinics. Built on Nexus in 3 weeks.', tags: ['Next.js', 'MongoDB', 'Tailwind'], gradient: 'from-green-400 to-teal-500', stats: { users: '12k', uptime: '99.9%' } },
+  { title: 'HealthTrack Pro', category: 'SaaS', desc: 'Patient management platform serving 200+ clinics. Built on Prism in 3 weeks.', tags: ['Next.js', 'MongoDB', 'Tailwind'], gradient: 'from-green-400 to-teal-500', stats: { users: '12k', uptime: '99.9%' } },
   { title: 'CreatorHub', category: 'Content Platform', desc: 'Newsletter and content platform for independent creators. 50k subscribers.', tags: ['React', 'API', 'CMS'], gradient: 'from-purple-400 to-indigo-500', stats: { users: '8k', uptime: '99.8%' } },
   { title: 'ShopMetrics', category: 'E-Commerce', desc: 'Real-time analytics dashboard for Shopify stores. Processes 1M+ events/day.', tags: ['Analytics', 'Webhooks', 'Charts'], gradient: 'from-orange-400 to-amber-500', stats: { users: '3k', uptime: '100%' } },
   { title: 'DevLaunch', category: 'Developer Tool', desc: 'API marketplace for developers. Manage keys, usage, and billing in one place.', tags: ['API', 'Billing', 'Auth'], gradient: 'from-blue-400 to-cyan-500', stats: { users: '20k', uptime: '99.9%' } },
@@ -16,8 +29,8 @@ export default function Portfolio() {
       <section className="bg-linear-to-br from-slate-900 to-indigo-950 text-white py-24 px-4 text-center">
         <div className="max-w-3xl mx-auto">
           <p className="text-indigo-400 text-sm font-semibold uppercase tracking-widest mb-4">Portfolio</p>
-          <h1 className="text-5xl font-extrabold mb-5">Built with Nexus</h1>
-          <p className="text-slate-300 text-lg">Real products built by real teams on top of the Nexus platform.</p>
+          <h1 className="text-5xl font-extrabold mb-5">Built with Prism</h1>
+          <p className="text-slate-300 text-lg">Real products built by real teams on top of the Prism platform.</p>
         </div>
       </section>
 
@@ -56,13 +69,12 @@ export default function Portfolio() {
       <section className="py-16 px-4 bg-indigo-600 text-white text-center">
         <div className="max-w-xl mx-auto">
           <h2 className="text-3xl font-bold mb-4">Build your own</h2>
-          <p className="text-indigo-200 mb-8">Start building with Nexus today. Free forever, no credit card required.</p>
+          <p className="text-indigo-200 mb-8">Start building with Prism today. Free forever, no credit card required.</p>
           <Link href="/dashboard" className="bg-white text-indigo-700 font-semibold px-8 py-3.5 rounded-xl hover:bg-indigo-50 transition-colors inline-block">
-            Open Dashboard â†’
+            Open Dashboard →
           </Link>
         </div>
       </section>
     </div>
   );
 }
-

@@ -1,4 +1,4 @@
-﻿import Link from 'next/link';
+import Link from 'next/link';
 import { Zap, GitFork, MessageSquare, Briefcase } from 'lucide-react';
 
 export default function Footer() {
@@ -9,7 +9,7 @@ export default function Footer() {
           <div className="col-span-2">
             <Link href="/" className="flex items-center gap-2 text-white font-bold text-lg mb-3">
               <Zap size={18} className="fill-indigo-400 text-indigo-400" />
-              Nexus
+              Prism
             </Link>
             <p className="text-sm max-w-xs leading-relaxed">
               The all-in-one platform for modern teams. Manage everything from one beautiful dashboard.
@@ -42,13 +42,12 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-gray-800 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs">
-          <span>Â© 2024 Nexus Inc. All rights reserved.</span>
+          <span>© 2025 Prism. All rights reserved.</span>
           <Link href="/dashboard" className="text-indigo-400 hover:text-indigo-300 transition-colors font-medium">
-            Open Dashboard â†’
+            Open Dashboard →
           </Link>
         </div>
       </div>
     </footer>
   );
 }
-
