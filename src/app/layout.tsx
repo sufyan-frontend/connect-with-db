@@ -7,7 +7,7 @@ import { CartProvider } from "@/context/CartContext";
 const geist = Geist({ variable: "--font-geist", subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Nexus â€” Modern SaaS Platform",
+  title: “Nexus — Modern SaaS Platform”,
   description: "Manage users, content, and analytics from one beautiful dashboard.",
 };
 
