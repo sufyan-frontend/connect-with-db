@@ -6,20 +6,28 @@ import { UsersAreaChart, PostsBarChart } from '@/components/dashboard/Charts';
 import Link from 'next/link';
 
 async function getData() {
-  await connectDB();
-  const [userCount, postCount, published, drafts, recentUsers, recentPosts] = await Promise.all([
-    User.countDocuments(),
-    Post.countDocuments(),
-    Post.countDocuments({ status: 'published' }),
-    Post.countDocuments({ status: 'draft' }),
-    User.find().sort({ createdAt: -1 }).limit(5).lean(),
-    Post.find().sort({ createdAt: -1 }).limit(5).lean(),
-  ]);
-  return {
-    stats: { userCount, postCount, published, drafts },
-    recentUsers: recentUsers.map(u => ({ _id: u._id.toString(), name: u.name, email: u.email, createdAt: u.createdAt ? new Date(u.createdAt).toLocaleDateString() : '-' })),
-    recentPosts: recentPosts.map(p => ({ _id: p._id.toString(), title: p.title, author: p.author, status: p.status, createdAt: p.createdAt ? new Date(p.createdAt).toLocaleDateString() : '-' })),
-  };
+  try {
+    await connectDB();
+    const [userCount, postCount, published, drafts, recentUsers, recentPosts] = await Promise.all([
+      User.countDocuments(),
+      Post.countDocuments(),
+      Post.countDocuments({ status: 'published' }),
+      Post.countDocuments({ status: 'draft' }),
+      User.find().sort({ createdAt: -1 }).limit(5).lean(),
+      Post.find().sort({ createdAt: -1 }).limit(5).lean(),
+    ]);
+    return {
+      stats: { userCount, postCount, published, drafts },
+      recentUsers: recentUsers.map(u => ({ _id: u._id.toString(), name: u.name, email: u.email, createdAt: u.createdAt ? new Date(u.createdAt).toLocaleDateString() : '-' })),
+      recentPosts: recentPosts.map(p => ({ _id: p._id.toString(), title: p.title, author: p.author, status: p.status, createdAt: p.createdAt ? new Date(p.createdAt).toLocaleDateString() : '-' })),
+    };
+  } catch {
+    return {
+      stats: { userCount: 0, postCount: 0, published: 0, drafts: 0 },
+      recentUsers: [],
+      recentPosts: [],
+    };
+  }
 }
 
 export default async function Dashboard() {

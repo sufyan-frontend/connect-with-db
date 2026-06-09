@@ -27,17 +27,21 @@ interface PostDoc {
 }
 
 async function getPosts(): Promise<PostDoc[]> {
-  await connectDB();
-  const posts = await Post.find({ status: 'published' }).sort({ createdAt: -1 }).lean();
-  return posts.map(p => ({
-    _id: p._id.toString(),
-    title: p.title,
-    excerpt: p.excerpt,
-    author: p.author,
-    status: p.status,
-    tags: p.tags ?? [],
-    createdAt: p.createdAt ? new Date(p.createdAt).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' }) : '',
-  }));
+  try {
+    await connectDB();
+    const posts = await Post.find({ status: 'published' }).sort({ createdAt: -1 }).lean();
+    return posts.map(p => ({
+      _id: p._id.toString(),
+      title: p.title,
+      excerpt: p.excerpt,
+      author: p.author,
+      status: p.status,
+      tags: p.tags ?? [],
+      createdAt: p.createdAt ? new Date(p.createdAt).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' }) : '',
+    }));
+  } catch {
+    return [];
+  }
 }
 
 const placeholders = [
