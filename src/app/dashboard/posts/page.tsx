@@ -4,7 +4,7 @@ import { Plus, Trash2, Pencil, X, Check, Search, FileText, Tag } from 'lucide-re
 
 interface Post { _id: string; title: string; excerpt: string; author: string; status: 'draft' | 'published'; tags: string[]; createdAt?: string; }
 
-const EMPTY = { title: '', excerpt: '', content: '', author: 'Admin', status: 'draft' as const, tags: '' };
+const EMPTY = { title: '', excerpt: '', content: '', author: 'Admin', status: 'draft' as 'draft' | 'published', tags: '' };
 
 export default function PostsPage() {
   const [posts, setPosts] = useState<Post[]>([]);

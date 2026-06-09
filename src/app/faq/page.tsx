@@ -5,7 +5,7 @@ import FAQAccordion from '@/components/FAQAccordion';
 export const metadata: Metadata = {
   title: 'FAQ',
   description:
-    'Answers to the most common questions about Prism — billing, security, API access, data export, and more. Can't find what you need? Contact us.',
+    "Answers to the most common questions about Prism — billing, security, API access, data export, and more. Can't find what you need? Contact us.",
   alternates: { canonical: '/faq' },
   openGraph: {
     title: 'Frequently Asked Questions | Prism',

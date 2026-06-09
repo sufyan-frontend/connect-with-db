@@ -5,7 +5,7 @@ import Link from 'next/link';
 export const metadata: Metadata = {
   title: 'Services',
   description:
-    'Explore Prism's modular services — web platform, data management, analytics, security, developer API, and managed support. Pick what fits your stage.',
+    "Explore Prism's modular services — web platform, data management, analytics, security, developer API, and managed support. Pick what fits your stage.",
   alternates: { canonical: '/services' },
   openGraph: {
     title: 'Services | Prism',
